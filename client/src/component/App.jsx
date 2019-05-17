@@ -5,15 +5,13 @@ import axios from 'axios';
 class App extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-      currentReviews: '',
-    };
+    this.state = {};
   }
 
   componentDidMount() {
     axios.get('/messages')
-      .then((responce) => {
-        this.setState({ currentReviews: responce.data });
+      .then((response) => {
+        this.setState({ currentReviews: response.data });
       });
   }
 
